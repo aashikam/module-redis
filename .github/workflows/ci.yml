@@ -8,9 +8,11 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Move into project directory
-              run: cd redis
+            - name: What directory
+              run: pwd
             - uses: actions/checkout@v2
+            - name: what directory 2
+              run: pwd
             - name: Ballerina Build
               uses: ballerina-platform/ballerina-action/@master
               with:
@@ -23,3 +25,5 @@ jobs:
                   REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
                   URL: ${{ secrets.URL }}
                   URL_ID: ${{ secrets.URL_ID }}
+            - name: what dir 3
+              run: pwd
