@@ -8,13 +8,10 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: What directory
-              run: pwd
-            - name: move
-              run: cd redis
             - uses: actions/checkout@v2
             - name: what directory 2
-              run: pwd
+              run: cd redis
+            - run: pwd
             - name: Ballerina Build
               uses: ballerina-platform/ballerina-action/@master
               with:
