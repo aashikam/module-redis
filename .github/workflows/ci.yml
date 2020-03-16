@@ -15,4 +15,4 @@ jobs:
               uses: ballerina-platform/ballerina-action/@master
               with:
                   args:
-                      build -a -c --sourceroot redis
+                      build -a -c --skip-tests --sourceroot redis 
