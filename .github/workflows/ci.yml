@@ -9,10 +9,10 @@ jobs:
 
         steps:
             - uses: actions/checkout@v2
-            -  run: mvn clean install -pl !redis
+            -  run: mvn clean install 
             -  run: cd redis
             - name: Ballerina Build
               uses: ballerina-platform/ballerina-action/@master
               with:
                   args:
-                      build -a -c --skip-tests --sourceroot redis 
+                      build -a -c --sourceroot redis 
