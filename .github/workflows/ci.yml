@@ -9,18 +9,10 @@ jobs:
 
         steps:
             - uses: actions/checkout@v2
+            -  run: mvn clean install -pl !redis
             -  run: cd redis
             - name: Ballerina Build
               uses: ballerina-platform/ballerina-action/@master
               with:
                   args:
                       build -a -c --sourceroot redis
-              env:
-                  CLIENT_ID: ${{ secrets.CLIENT_ID }}
-                  CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-                  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-                  REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
-                  URL: ${{ secrets.URL }}
-                  URL_ID: ${{ secrets.URL_ID }}
-            - name: what dir 3
-              run: pwd
